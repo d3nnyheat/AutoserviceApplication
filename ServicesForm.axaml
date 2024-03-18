@@ -1,0 +1,61 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:drawing="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AutoserviceApplication.ServicesForm"
+        Title="Услуги автосервиса (администратор)"
+        Width="1050" Height="790"
+        Background="#ffffe1"
+        Icon="/Assets/car_repair_icon.ico"
+        WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <Label Content="Услуги автосервиса" FontSize="20" FontFamily="Arial" HorizontalContentAlignment="Center"></Label>
+        <DataGrid Name="ServicesGrid" Height="600" x:CompileBindings="False" Margin ="10 5 0 0" LoadingRow="ServicesGrid_OnLoadingRow">
+            <DataGrid.Resources>
+                <SolidColorBrush x:Key="DataGridRowHoveredBackgroundColor" Color="Orange" />
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Срок выполнения (часы)" Binding="{Binding Duration}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Скидка (%)" Binding="{Binding Discount}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Фото" Width="85" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Image}"></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+            <StackPanel Orientation="Horizontal">
+            <TextBlock VerticalAlignment="Center" Margin = "10 10 0 0"> Поиск по наименованию услуги: </TextBlock>
+            <TextBox Name="SearchTextBox" Width="200" Margin ="10 10 0 0" TextChanged="SearchTextBox_OnTextChanged"></TextBox>
+                <Button Name="Reset" Content="Обновить таблицу" Click="ResetTable_OnClick" Margin=" 10 10 0  0"></Button>
+                <TextBlock VerticalAlignment="Center"
+                           x:Name="FilterDiscount" Margin ="10 10 0 0">Фильтрация по скидке: </TextBlock>
+                <ComboBox Name="DiscontComboBox" 
+                          x:CompileBindings="False"
+                          SelectionChanged="DiscountFilter" Width="150" Margin ="10 10 0 0">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding }" TextAlignment="Center"></TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Сортировать по возрастанию цены" Click="SortAscending" Margin="10 10 0 0"></Button>
+            <Button Content="Сортировать по убыванию цены" Click="SortDescending" Margin="25 10 0 0"></Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Name="AddButton" Content="Добавить данные" Click="AddData" Margin="10 15 10 10"></Button>
+            <Button Name="Update" Content="Изменить данные" Click="EditData" Margin="10 15 10 10"></Button>
+            <Button Name="Delete" Content="Удалить данные" Click="DeleteData" Margin="10 15 10 10"></Button>
+            <Button Name="BackButton" Content="Вернуться к меню" Click="BackToMenu" Margin="425 30 10 10"></Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

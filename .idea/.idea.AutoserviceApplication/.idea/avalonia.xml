@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="AddEdit.axaml" value="AutoserviceApplication.csproj" />
+        <entry key="ClientServicesForm.axaml" value="AutoserviceApplication.csproj" />
+        <entry key="LoginWindow.axaml" value="AutoserviceApplication.csproj" />
+        <entry key="MainMenu.axaml" value="AutoserviceApplication.csproj" />
+        <entry key="RequestForm.axaml" value="AutoserviceApplication.csproj" />
+        <entry key="ServicesForm.axaml" value="AutoserviceApplication.csproj" />
+        <entry key="photo.axaml" value="AutoserviceApplication.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

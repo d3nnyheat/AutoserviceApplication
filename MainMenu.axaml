@@ -1,0 +1,29 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="470" d:DesignHeight="90"
+        x:Class="AutoserviceApplication.MainMenu"
+        Title="Главное меню"
+        Background="#ffffe1"
+        Icon="/Assets/car_repair_icon.ico"
+        WindowStartupLocation="CenterScreen"
+        Width="470"
+        Height="90">
+        <Grid>
+                <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" Margin=" 10 10 0 0">
+                                <Button Name="ServicesButton" Content="Услуги" Click="ServicesButton_OnClick"></Button></StackPanel>
+                        <StackPanel Orientation="Vertical" Margin=" 10 10 0 0">
+                                <Button Name="CatalogButton" Content="Заявки" Click="ServicesButton_OnClick"></Button></StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" >
+                        <StackPanel Margin=" 125 10 0 0">
+                                <Button Name="SquadButton" Content="Заказы" Click="ServicesButton_OnClick"></Button>
+                        </StackPanel>
+                        <StackPanel Margin=" 400 10 0 0">
+                                <Button Name="Laureates" Content="Выход" Click="Logon_OnClick"></Button>
+                        </StackPanel>
+                </StackPanel>
+        </Grid>
+</Window>

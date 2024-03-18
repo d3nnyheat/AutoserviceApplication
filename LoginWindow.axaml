@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="170"
+        x:Class="AutoserviceApplication.LoginWindow"
+        Title="Авторизация"
+        Background="#ffffe1"
+        WindowStartupLocation="CenterScreen"
+        Width="300"
+        Height="180"
+        Icon="/Assets/car_repair_icon.ico">
+        <Grid>
+                <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock VerticalAlignment="Center" Margin=" 20 10 0 10"> Логин: </TextBlock>
+                                <TextBox Name="LoginTextBox" Width="215" Margin="10 10 0 10" Watermark="Введите логин"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock VerticalAlignment="Center" Margin=" 10 10 0 10"> Пароль: </TextBlock>
+                                <TextBox Name="PasswordTextBox" Width="215" Margin="10 10 0 10" Watermark="Введите пароль" PasswordChar="*"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                                <Label Name="LoginError" HorizontalAlignment="Center" Content="Неверный логин/пароль!" IsVisible="False"></Label>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                                <Button Name="Form2" Content="Вход" Click="LoginAttempt" Margin=" 10 10 65 10"></Button>
+                                <Button Name="Exit" Content="Выход" Click="AppExit" Margin=" 100 10 0 10"></Button>
+                        </StackPanel>
+                </StackPanel>
+        </Grid>
+</Window>
